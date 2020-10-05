@@ -724,10 +724,6 @@ h2 {
   margin-top: 50px;
 }
 
-.category-popular h2 {
-  text-align: center;
-}
-
 .category-popular .category-popular-list {
   margin-top: 20px;
 }
@@ -748,7 +744,8 @@ h2 {
 
 @media (max-width: 1681px) {
   .category-popular .category-popular-list > div {
-    margin-right: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
     width: 200px;
   }
 }
@@ -756,7 +753,8 @@ h2 {
 @media (max-width: 1441px) {
   .category-popular .category-popular-list > div {
     width: 165px;
-    margin-right: 26px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
@@ -858,6 +856,12 @@ h2 {
 
 .category-popular .category-popular-list > div:first-of-type {
   margin-left: 10px;
+}
+
+@media (max-width: 1680px) {
+  .category-popular .category-popular-list > div:first-of-type {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 1200px) {
