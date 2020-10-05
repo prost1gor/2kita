@@ -38,7 +38,7 @@ h2{
     padding-top: 12px;
     .topline-menu{
         display: inline;
-        @media (max-width: 992px) {
+        @media (max-width: 993px) {
             display: none;
         }
 
@@ -65,16 +65,8 @@ h2{
         >input[type="checkbox"]{
             display: none;
         }
-        // >a{
-        //     display: none;
-        //     text-decoration: none;
-        //     font-size: 13px;
-        //     line-height: 22px;                
-        //     @media (max-width: 993px) {
-        //         display: inline;
-        //     }
-            
-        // }
+        @media (max-width: 768px) {
+    display: none;        }
         >span{
             cursor: pointer;
         }
@@ -125,6 +117,9 @@ h2{
         @media (max-width: 993px) {
             float: right;
         }
+        @media (max-width: 768px) {
+            display: none;
+        }
         #telephone-number{
             font-weight: bold;
             font-size: 15px;
@@ -163,7 +158,6 @@ h2{
     padding-top: 6px;
     @media (max-width: 1200px) {
         padding-top: 6px;
-
     }
     .fly-header{
         >div{
@@ -177,6 +171,12 @@ h2{
         .kit-logo{
             width: 190px;
             height: 75px;
+            @media (max-width: 768px) {
+                position: relative;
+                top: -15px;
+                left: 30px;
+                height: 40px;
+            }
         }
         .catalog{
             margin-left: 65px;
@@ -188,8 +188,16 @@ h2{
             box-sizing: border-box;
             text-align: unset;
             cursor: pointer;
+            position: relative;
+
             @media (max-width: 1200px) {
                 margin-left: 30px;
+            }
+            @media (max-width: 768px) {
+                float: left;
+                width: 40px;
+                height: 40px;
+                margin-left: 0;
             }
             .catalog-button{
                 font-family: Arial;
@@ -200,15 +208,19 @@ h2{
                 color: #202020;
                 margin-left: 48px;
                 position: relative;
+                @media (max-width: 768px) {
+                display: none;
+                }
             }
-            .catalog-button::before{
-                width: 20px;
-                height: 20px;
-                content: url(../wallpapers/burger.png);
-                position: absolute;
-                top: -1px;
-                left: -29px;
-            }
+            
+        }
+        .catalog::before{
+            width: 20px;
+            height: 20px;
+            content: url(../wallpapers/burger.png);
+            position: absolute;
+            top: 9px;
+            left: 11px;
         }
         .input-group{
             margin-left: 25px;
@@ -238,6 +250,9 @@ h2{
                 @media (max-width: 993px) {
                     width: 264px;
                 }
+                @media (max-width: 768px) {
+                    display: none;
+                }
                 
             }
             #search-form::placeholder{
@@ -266,6 +281,12 @@ h2{
                 height: 40px;
                 background: #FFEA01;
                 border-radius: 0 4px 4px 0;
+                @media (max-width: 768px) {
+                    background: #FFFFFF;
+                    width: 40px;
+                    height: 40px;
+                    margin-left: 30px;
+                }
                 .search-button-img{
                     position: relative;
                     top: 8px;
@@ -275,6 +296,9 @@ h2{
             }
         }
         .buttons-block{
+            @media (max-width: 768px) {
+                
+            }
             >div{
                 cursor: pointer;
                 display: inline-block;
@@ -284,6 +308,12 @@ h2{
                 @media (max-width: 1200px) {
                     margin-left: 30px;
                 }
+                @media (max-width: 768px) {
+                    height: 40px;
+                    width: 40px;
+                    margin-left: 10px;
+                }
+                
                 img{
                     display: inline-block;
                     vertical-align: middle;
@@ -293,6 +323,10 @@ h2{
             >div:first-child{
                 @media (max-width: 1200px) {
                     margin-left: 25px;
+                }
+                @media (max-width: 768px) {
+                    
+                    margin-left: 10px;
                 }
             }
             >div:nth-child(1n+2) a:after{
@@ -322,10 +356,18 @@ h2{
                     right: -18px;
                 }
             }
-            // >div:nth-child(3)::after{
-            //     top: -4px;
 
-            // }
+            >div:nth-child(2), div:nth-child(3){
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
+            >div:nth-child(-n+3)::after{
+                @media (max-width: 768px) {
+                    content: "";
+                }
+            }
+            
         }
     }
     
@@ -389,6 +431,9 @@ h2{
     }
     .breadcrumbs{
         margin-bottom: 7px;
+        @media (max-width: 768px) {
+            margin-top: 25px;
+        }
         >ul{
             font-style: normal;
             font-weight: normal;
@@ -412,6 +457,9 @@ h2{
     margin-top: 30px;
     .category-block-menu{
         height: 40px;
+        @media (max-width: 768px) {
+            display: none;
+        }
         // height: 400px;
 
         background: #F5F5F5;
@@ -488,11 +536,17 @@ h2{
         width: 100%;
         height: 400px;
         overflow: hidden;
+        @media (max-width: 768px) {
+            height: 322px;
+        }
 
         .swiper-slide{
             >img{
                 width: 1620px;
                 height: 400px;
+                @media (max-width: 768px) {
+                    height: 322px;
+                }
             }
             >span:first-of-type{
                 width: 514px;
@@ -507,6 +561,11 @@ h2{
                 position: absolute;
                 top: 105px;
                 left: 65px;
+                @media (max-width: 768px) {
+                    width: 357px;
+                    font-size: 22px;
+                    line-height: 27px;
+                }
             }
             >a{
                 background: #FFEA01;
@@ -521,6 +580,9 @@ h2{
                 position: absolute;
                 top: 220px;
                 left: 65px;
+                @media (max-width: 768px) {
+                    top: 190px;
+                }
             }
             
         }
@@ -567,6 +629,14 @@ h2{
                 margin-left: 0;
                 margin-bottom: 30px;
             }
+            @media (max-width: 993px) {
+                width: 185px;
+            }
+            @media (max-width: 768px) {
+                width: 153px;
+                margin-right: 24px;
+
+            }
             text-align: center;
             >a{
                 text-decoration: none;
@@ -580,6 +650,12 @@ h2{
                     }
                     @media (max-width: 1200px) {
                         width: 220px;
+                    }
+                    @media (max-width: 993px) {
+                        width: 185px;
+                    }
+                    @media (max-width: 768px) {
+                        width: 153px;
                     }
 
                 }
@@ -596,6 +672,14 @@ h2{
                     @media (max-width: 1200px) {
                         font-size: 17px;
                         line-height: 29px;
+                    }
+                    @media (max-width: 993px) {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    @media (max-width: 768px) {
+                        font-size: 13px;
+                        line-height: 14px;
                     }
                 }
             }
@@ -736,6 +820,11 @@ h2{
                 @media (max-width: 1200px) {
                     text-align: center;
                 }
+                @media (max-width: 768px) {
+                    text-align: left;
+                }
+                
+                
                 
                 >div{
                     width: 233px;
@@ -755,8 +844,15 @@ h2{
                     @media (max-width: 1200px) {
                         margin-right: 30px;
                         width: 200px;
-
                     }
+                    @media (max-width: 993px) {
+                        width: 163px;
+                        margin-right: 15px;
+                    }
+                    @media (max-width: 768px) {
+                        width: 150px;
+                    }
+                    
                     a{
                         text-decoration: none;
                         
@@ -770,7 +866,12 @@ h2{
                             }
                             @media (max-width: 1200px) {
                                 width: 200px;
-                                
+                            }
+                            @media (max-width: 993px) {
+                                width: 163px;
+                            }
+                            @media (max-width: 768px) {
+                                width: 150px;
                             }
                         }
                         >span{
@@ -785,8 +886,15 @@ h2{
                 }
                 >div:nth-child(4n){
                     margin-right: 0px;
-                    
-                    
+                    @media (max-width: 768px) {
+                        margin-right: 15px;
+                    } 
+                }
+                >div:nth-child(3n){
+                    margin-right: 0px;
+                    @media (max-width: 768px) {
+                        margin-right: 0;
+                    } 
                 }
             }
         }
@@ -889,9 +997,11 @@ h2{
         .swiper-slide{
             img{
                 border-radius: 7px;
-                @media (max-width: 1681px) {
-                    width: 300px;
-                    height: 171px;
+                width: 370px;
+                height: 230px;
+                @media (max-width: 993px) {
+                    width: 240px;
+                    height: 150px;
                 }
                 
             }
@@ -905,6 +1015,10 @@ h2{
                 color: #202020;
                 margin-top: 10px;
                 width: 370px;
+                @media (max-width: 993px) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
             }
         }
     }
