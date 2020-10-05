@@ -1132,10 +1132,6 @@ h2 {
   }
 }
 
-.subcategory-popular .subcategory-popular-container .subcategory-popular-block .subcategory-popular-list > div:nth-child(3n) {
-  margin-right: 0px;
-}
-
 @media (max-width: 768px) {
   .subcategory-popular .subcategory-popular-container .subcategory-popular-block .subcategory-popular-list > div:nth-child(3n) {
     margin-right: 0;
