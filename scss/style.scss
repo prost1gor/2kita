@@ -36,7 +36,7 @@ h2{
     margin: 0 auto;
     padding: 0 40px;
     box-sizing: border-box;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 
@@ -102,9 +102,7 @@ h2{
             }
             >li{
                 list-style-type: none;
-                margin: 0 20px;
-                padding-top: 9px;
-                padding-bottom: 9px;
+                padding: 9px 20px;
                 box-sizing: border-box;
                 position: static;
 
@@ -122,18 +120,25 @@ h2{
                 content: "";
             }
             >li:first-of-type{
-                margin-left: 28px;
+                margin-left: 8px;
             }
+            
             >li:hover .block-item-list{
                 display: flex;
+                visibility: visible;
+                transform: scale(1);
             }
+            
+
             >li:hover{
                 border-bottom: 2px solid #FFEA01;
             }
             .block-item-list{
-                display: none;
+                // display: none;
+
+                visibility: hidden;
+
                 list-style-type: none;
-                // width: 100%;
                 width: 1560px;
                 height: 465px;
                 position: absolute;
@@ -143,6 +148,11 @@ h2{
                 box-shadow: 0px 5px 8px rgba(32, 32, 32, 0.12);
                 z-index: 2;
                 padding-left: 0px;
+                border-bottom: 2px solid #ffe062;
+
+                transition: transform 0.15s; 
+                transform: scale(0.7);
+                transform-origin: 0 0;
                 @media (max-width: 1680px) {
                     width: calc(100vw - 30px);
                 }
@@ -389,18 +399,18 @@ h2{
         position: relative;
         >.swiper-wrapper{
             >.swiper-slide{
-                height: 275px;
+                min-height: 275px;
                 @media (max-width: 1680px) {
-                    height: 280px;
+                    min-height: 280px;
                 }
                 @media (max-width: 1441px) {
-                    height: 265px;
+                    min-height: 265px;
                 }
                 @media (max-width: 768px) {
-                    height: 235px;
+                    min-height: 235px;
                 }
                 @media (max-width: 576px) {
-                    height: 190px;
+                    min-height: 190px;
                 }
                 position: relative;
                 >a{
@@ -433,12 +443,13 @@ h2{
                         font-size: 13px;
                         line-height: 17px;
                         color: #202020;
+                        margin: 0 auto;
                         @media (max-width: 768px) {
                             font-size: 12px;
-                            width: 135px;
+                            width: auto;
                         }
-                        @media (max-width: 576px) {
-                            width: 100px;
+                        @media (max-width: 723px) {
+                            font-size: 12px;
                         }
                     }
                     .product-popular-coast, .prices__values{
@@ -448,15 +459,28 @@ h2{
                         font-size: 16px;
                         line-height: 16px;
                         color: #202020;
-                        position: absolute;
-                        bottom: 0px;
+                        text-align: start;
+                        margin-left: 18px;
+                        // position: absolute;
+                        // bottom: 0px;
                     }
                 }
             }
         }
     }
 }
-
+.product-popular2{
+    .swiper-container1{
+        z-index: 101;
+    }
+    
+}
+.product-popular3{
+    .swiper-container1{
+        z-index: 100;
+    }
+    
+}
 
 .subcategory-popular{
     margin-top: 100px;
@@ -726,6 +750,10 @@ h2{
 .articles-popular{
     margin-top: 50px;
     margin-bottom: 50px;
+    @media (max-width: 481px) {
+        margin-top: 30px;
+    margin-bottom: 30px;
+    }
     .articles-popular-swiper{
         margin-top: 22px;
         position: relative;
@@ -754,8 +782,9 @@ h2{
                     margin-top: 10px;
                     width: auto;
                     @media (max-width: 992px) {
-                        font-size: 16px;
-                        line-height: 24px;
+                        font-size: 15px;
+                        line-height: 22px;
+                        width: 240px;
                     }
                     @media (max-width: 480px) {
                         font-size: 13px;
@@ -767,6 +796,60 @@ h2{
         }
     }
 }
+.product-popular{
+
+    .swiper-slide{
+        background-color: white;
+        text-align: center;
+        border-radius: 5px;
+        padding-top: 18px;
+        border: 1px solid transparent;
+        .products__description, .products__detail{
+            display: none;
+            width: 180px;
+        }
+        
+    }
+    
+    .swiper-slide:hover{
+        border: 1px solid rgba(80, 83, 93, 0.3);
+        @media (max-width: 768px) {
+            border: 1px solid transparent;
+        }
+    }
+    .swiper-slide:hover .products__detail{
+        display: block;
+        margin: 0 auto;
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    
+    .products-list-addcart-button {
+        margin-top: 0px;
+        margin-right: 10px;
+    }
+    .buttons-section .hidden-xs .pull-right {
+        width: auto;
+    }
+    .col-left {
+        float: left;
+    }
+    .col-right{
+        float: right;
+    }
+    .products-button {
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-right: 5px;
+    }
+    .col-xs-6 {
+        width: auto;
+    }
+
+}
+
+
 
 
 .swiper-button-next, .swiper-button-prev{
@@ -806,14 +889,14 @@ h2{
 
 .swiper-container1{
     overflow: hidden;   
+    
     .swiper-button-next, .swiper-button-prev{
-        top: 100px;
+        top: 118px;
         @media (max-width: 1441px) {
-            top: 92px;
-
+            top: 110px;
         }
         @media (max-width: 768px) {
-            top: 77px;
+            top: 95px;
         }
         @media (max-width: 640px) {
             display: none;
