@@ -591,6 +591,7 @@ h2 {
   line-height: 17px;
   color: #202020;
   margin: 0 auto;
+  text-align: start;
 }
 
 @media (max-width: 768px) {
@@ -1140,6 +1141,9 @@ h2 {
   padding-left: 25px;
   padding-right: 25px;
   margin-right: 5px;
+  background-image: url(/wallpapers/big3.png);
+  background-repeat: no-repeat;
+  background-position: 10px 5px;
 }
 
 .product-popular .col-xs-6 {
