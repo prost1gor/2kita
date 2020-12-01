@@ -3017,9 +3017,10 @@
 						height="60"><br> </div>
 						<div class="fly-header__catalog" clickCheck = "">
 							<div>
-								<span id="catalog-button">Каталог</span>
-								<div class="catalog-list"></div>
+								<span id="fly-header__catalog-button">Каталог</span>
+								<div class="fly-header__catalog-list"></div>
 							</div>
+
 							
 					</div>
 				<div class="fly-header__search">
@@ -5149,7 +5150,7 @@
 
 	</div>
 	
-	<div class="main" style="height: 100px; background-color: red; "></div>
+	<div class="main-content" style="height: 100px;"></div>
 
 		
 	<script type="application/ld+json">
@@ -5685,7 +5686,69 @@ var swiper = new Swiper('.swiper-container1', {
 	});
   </script>
 
-  	
+<script>
+    let catalogButton = document.querySelector(".fly-header__catalog");
+    let catalogList = document.querySelector(".fly-header__catalog-list");
+
+    let getCatalog = function getCatalog() {
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'catalog.html', true);
+        xhr.responseType = 'text';
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+          if (this.readyState != 4) return;
+        
+          // по окончании запроса доступны:
+          // status, statusText
+          // responseText, responseXML (при content-type: text/xml)
+        
+          if (this.status != 200) {
+              // обработать ошибку
+              alert( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+              return;
+          }
+          
+          let catalogList1 = xhr.response;
+          
+          sessionStorage.setItem('fly-header__catalogList', catalogList1);
+
+        };
+        }
+
+    getCatalog();
+
+    function catalogfilling(){
+        let catalog1 = sessionStorage.getItem('fly-header__catalogList');
+        catalogList.insertAdjacentHTML('beforeend', catalog1);
+        
+    }
+
+    catalogfilling();
+
+    catalogButton.addEventListener('click', function(event){
+        let clickCheck = catalogButton.getAttribute('clickCheck');
+
+        if (clickCheck !== 'clicked'){
+            catalogButton.setAttribute('clickCheck', 'clicked');
+            catalogList.style.display = 'flex';
+			// document.querySelector('.main-content').style.backgroundColor = '#202020';
+			// document.querySelector('.main-content').style.opacity = '0.25';
+
+
+        }
+        else {
+            catalogButton.setAttribute('clickCheck', '');
+            catalogList.style.display = 'none';
+			// document.querySelector('.main-content').style.backgroundColor = '#FFFFFF';
+			// document.querySelector('.main-content').style.opacity = '1.0';
+
+        }
+        
+    })
+  	</script>
 	
 	
 	
